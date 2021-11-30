@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Prediction</div>
+
+      <table cellspacing="0">
+      <tr>
+         <th>Article Tag</th>
+         <th>Article Headline</th>
+         <th>Article Description</th>
+         <th>Article url</th>
+          <th>Artical date</th>
+      </tr>
+         {% for result in results %}
+      <tr>
+          <td>{{result['Article Tag']}}</td>
+         <td>{{result['Article Headline']}}</td>
+         <td>{{result['Article Description']}}</td>
+         <td>{{result['Article url']}}</td>
+         <td>{{result['Artical date']}} </td>
+       {% endfor %}
+   </table>
+</div>
